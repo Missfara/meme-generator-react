@@ -12,17 +12,18 @@ let Meme = () => {
       });
   }, []);
 
+  let url;
   let memeG = () => {
     const memeArray = allMemes;
     const randomMeme = Math.floor(Math.random() * memeArray.length);
-    const url = memeArray[randomMeme].url;
+    url = memeArray[randomMeme].url;
     console.log(url);
   };
 
   return (
     <div>
       <form className="item">
-        {/* <p>{url}</p> */}
+        <p>{url}</p>
         <input className="left" type="text" placeholder="Shut up" />
         <input className="right" type="text" placeholder="and take my Money" />
         <button onClick={memeG}>Get a new meme Image</button>
