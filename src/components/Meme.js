@@ -3,21 +3,31 @@ import { useState, useEffect } from "react";
 
 let Meme = () => {
   let [allMemes, setAllMemes] = useState("");
+  let [url, setUrl] = useState("");
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
       .then((data) => {
-        setAllMemes(data.data.memes);
+        let adjustedArr = data.data.memes.map((item) => {
+          return {
+            ...item,
+            url: item.url.replace("\\", ""),
+          };
+        });
+        // console.log(adjustedArr)
+        setAllMemes(adjustedArr);
       });
   }, []);
 
-  let url;
-  let memeG = () => {
+  let memeG = (event) => {
+    let link;
+    event.preventDefault();
     const memeArray = allMemes;
     const randomMeme = Math.floor(Math.random() * memeArray.length);
-    url = memeArray[randomMeme].url;
-    console.log(url);
+    link = memeArray[randomMeme].url;
+    setUrl(link);
+    console.log(link);
   };
 
   return (
@@ -28,7 +38,8 @@ let Meme = () => {
         <button className="btn" onClick={memeG}>
           Get a new meme Image
         </button>
-        <p>{url}</p>
+
+        {url ? <img src={url} alt="edward" /> : null}
       </form>
     </div>
   );
