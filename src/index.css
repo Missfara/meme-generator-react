@@ -24,7 +24,7 @@ header {
   );
 }
 
-img {
+.pic {
   width: 8%;
 }
 .rig {
@@ -76,11 +76,18 @@ input {
   padding: 15px;
   border-radius: 50%;
 }
-.count-minus, .count-plus{
+.count-minus,
+.count-plus {
   padding: 10px;
   font-size: 20px;
-border-radius: 50%;
-background-color: gray;
-border: solid grey;
-color:white
+  border-radius: 50%;
+  background-color: gray;
+  border: solid grey;
+  color: white;
+}
+
+img {
+  width: 100%;
+  text-align: center;
+  margin: 30px;
 }
