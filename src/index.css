@@ -31,7 +31,7 @@ img {
   margin-left: 50%;
 }
 
-button {
+.btn {
   grid-column: 1 / -1;
   padding: 20px;
   border-radius: 5px;
@@ -46,8 +46,6 @@ button {
     rgba(0, 0, 255, 0.493)
   );
 }
-
-
 
 .item {
   display: grid;
@@ -64,4 +62,25 @@ input {
   text-indent: 5px;
   margin: 20px;
   border-radius: 5px;
+}
+
+.count {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.counter--count > h1 {
+  display: inline;
+  background-color: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+.count-minus, .count-plus{
+  padding: 10px;
+  font-size: 20px;
+border-radius: 50%;
+background-color: gray;
+border: solid grey;
+color:white
 }

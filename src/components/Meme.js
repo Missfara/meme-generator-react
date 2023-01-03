@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 let Meme = () => {
-  let [allMemes, setAllMemes] = useState([]);
+  let [allMemes, setAllMemes] = useState("");
 
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
@@ -23,10 +23,12 @@ let Meme = () => {
   return (
     <div>
       <form className="item">
-        <p>{url}</p>
         <input className="left" type="text" placeholder="Shut up" />
         <input className="right" type="text" placeholder="and take my Money" />
-        <button onClick={memeG}>Get a new meme Image</button>
+        <button className="btn" onClick={memeG}>
+          Get a new meme Image
+        </button>
+        <p>{url}</p>
       </form>
     </div>
   );
