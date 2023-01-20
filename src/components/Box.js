@@ -1,9 +1,7 @@
 import React from "react";
 
 let Box = (props) => {
-  let styles = {
-    backgroundColor: props.on ? "teal" : "black",
-  };
+  
 
   return (
     <div>
